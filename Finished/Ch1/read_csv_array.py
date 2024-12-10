@@ -1,13 +1,14 @@
 # LinkedIn Learning Course
 # Example file for Python: Working with Excel and Spreadsheet Data by Joe Marini
-# Reading CSV file into an array
 
-# import the csv module from the standard library
+# Čitanje CSV fajla u niz
+
+# uvoz csv modula iz standardne biblioteke
 import csv
 
 
 def read_csv_to_array(filename):
-    # define the array that will hold the data
+    # definiši niz koji će sadržavati podatke
     data = []
     with open(filename, 'r') as csvfile:
         reader = csv.reader(csvfile)
@@ -15,13 +16,12 @@ def read_csv_to_array(filename):
             data.append(row)
     return data
 
-
-# Read the data into an array of arrays
+# učitaj podatke u niz nizova inventory_data
 inventory_data = read_csv_to_array("Inventory.csv")
 
-# Each row in the array is itself an array of values
+# svaki red u nizu je niz vrednosti
 print(f"Items: {len(inventory_data)}")
-print(inventory_data[0])  # This will print the first row (header)
-print(inventory_data[1])  # This will print the first row of data
-# This will print the name of the item and quantity
+print(inventory_data[0])  # Ovo će odštampati prvi red (header)
+print(inventory_data[1])  # Ovo će odštampati prvi red sa vrednostima
+# Sledeći kod će odštampati ime i broj prve stavke
 print(inventory_data[1][0], inventory_data[1][2])
